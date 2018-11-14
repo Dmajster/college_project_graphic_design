@@ -1,0 +1,7 @@
+{
+  "name": "Autonomo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
