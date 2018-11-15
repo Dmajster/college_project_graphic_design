@@ -1,5 +1,7 @@
 $buttonOffset:15px;
 
+$avatarMargin:15px;
+
 page-main {
     main {
         display: grid;
@@ -34,5 +36,26 @@ page-main {
     #billing, #authentication, #routes {
         width: 100%;
         display: grid;
+    }
+    #avatar{
+        margin: $avatarMargin;
+        display: grid;
+        grid-auto-flow: row;
+
+        align-content: center;
+        justify-content: center;
+
+        .image{
+            display: grid;
+            width: auto;
+            height: 9rem;
+            border-radius: 100%;
+            background-color: red;
+        }
+        .username{
+            margin-top: 15px;
+            font-size: 16px;
+            justify-self: center;
+        }
     }
 }
