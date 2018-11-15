@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 
 declare var L;
 
@@ -9,26 +10,69 @@ declare var L;
 })
 export class MainPage {
   map: any;
-  
+  locationRetryInterval;
+
   constructor (
     public navCtrl: NavController,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    private geolocation: Geolocation
   ) {
     menuCtrl.swipeEnable(false);
   }
 
 
   ionViewDidLoad(){
-    this.loadMap();
+    this.initializeMap();
   }
  
-  loadMap(){
+  async initializeMap() {
+    let latitude: number = 0;
+    let longitude: number = 0;
+
+    try {
+      let response: Geoposition = await this.geolocation.getCurrentPosition();
+      latitude = response.coords.latitude;
+      longitude = response.coords.longitude;
+    } catch(err) {
+      console.log(JSON.stringify(err));
+      this.locationRetryInterval = setInterval( () => {
+        console.log("Retrying to aquire location!");
+        this.getLocation();
+      }, 10000 );
+    }
+
+    this.loadMap(latitude, longitude);
+  }
+
+  async getLocation() {
+    let latitude: number = 0;
+    let longitude: number = 0;
+    let error = null;
+
+    try {
+      let response: Geoposition = await this.geolocation.getCurrentPosition();
+      latitude = response.coords.latitude;
+      longitude = response.coords.longitude;
+    } catch(err) {
+      console.log(JSON.stringify(err));
+      error = err;
+    }
+
+    if(error != null) {
+      return;
+    }
+
+    clearInterval(this.locationRetryInterval);
+    this.loadMap(latitude, longitude);
+  }
+
+  async loadMap(latitude: Number, longitude: Number){
     this.map = L.map('map', {
-      center: [51.505, -0.09],
-      zoom: 13,
+      center: [latitude, longitude],
+      zoom: 15,
       zoomControl: false
     });
-
+  
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '',
@@ -37,6 +81,6 @@ export class MainPage {
 
   toggleMenu()
   {
-    this.menuCtrl.enable(!this.menuCtrl.isEnabled);
+    this.menuCtrl.toggle();
   }
 }

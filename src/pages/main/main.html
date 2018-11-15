@@ -1,20 +1,19 @@
 <ion-content>
   <main>
-      <div class="container" (click)="toggleMenu()">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-      </div> 
+      <button ion-button round id="menu" (click)="toggleMenu()">⚙️</button>
       <div id="map" #map></div>
-      <button id="go">GO</button>
+      <button ion-button round id="go">Request pickup</button>
   </main>
 </ion-content>
+  
 
-<ion-menu [content]="mycontent">
+<ion-menu swipeEnabled="false" [content]="mycontent" type="overlay">
   <ion-content>
-    <ion-list>
-      <p>some menu content, could be list items</p>
-    </ion-list>
+    <button ion-button block>Billing</button>
+    <button ion-button block>Authentication</button>
+    <button ion-button block>Routes</button>
+    <button ion-button block>Sign out</button>
   </ion-content>
 </ion-menu>
-  
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

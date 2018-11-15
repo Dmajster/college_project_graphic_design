@@ -1,11 +1,9 @@
-page-main {
-    
+$buttonOffset:15px;
 
+page-main {
     main {
         display: grid;
         min-height: 100%;
-        grid-auto-flow: column;
-        align-items: center;
     }
  
     #map {
@@ -16,43 +14,25 @@ page-main {
         min-height: 100%;
     }
 
+    #menu {
+        z-index: 800;
+        display: grid;
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin-left: $buttonOffset;
+        margin-top: $buttonOffset;
+    }
+
     #go {
         z-index: 800;
         display: grid;
         justify-self: center;
         align-self: flex-end;
-        margin-bottom: 15px;
+        margin-bottom: $buttonOffset;
     }
 
-    .container {
-        z-index: 800;
-        display: inline-block;
-        cursor: pointer;
-    }
-    
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-    
-    /* Rotate first bar */
-    .change
-    { 
-        .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-            transform: rotate(-45deg) translate(-9px, 6px) ;
-        }
-
-        .bar2 {
-            opacity: 0;
-        }
-
-        .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-            transform: rotate(45deg) translate(-8px, -8px) ;
-        }
+    #billing, #authentication, #routes {
+        width: 100%;
+        display: grid;
     }
 }
