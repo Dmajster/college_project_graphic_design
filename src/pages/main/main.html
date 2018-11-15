@@ -1,6 +1,6 @@
 <ion-content>
   <main>
-      <button ion-button round id="menu" (click)="toggleMenu()">⚙️</button>
+      <button ion-button round color="light" id="menu" (click)="toggleMenu()">⚙️</button>
       <div id="map" #map></div>
       <button ion-button round id="go">Request pickup</button>
   </main>
@@ -9,6 +9,10 @@
 
 <ion-menu swipeEnabled="false" [content]="mycontent" type="overlay">
   <ion-content>
+    <div id="avatar">
+      <img class="image" src="https://dummyimage.com/128x128/ded3de/fff" alt="?">
+      <div class="username">Test</div>
+    </div>
     <button ion-button block>Billing</button>
     <button ion-button block>Authentication</button>
     <button ion-button block>Routes</button>
