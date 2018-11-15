@@ -1,0 +1,39 @@
+<input 
+    class="input shadow"
+    [class.active]="active"
+    [(ngModel)]="searchQuery"
+    (input)="onInput()"
+    placeholder="Search for your destination"
+>
+<div class="results"
+    [class.active]="active"
+>
+    <div *ngIf="path.length > 0">
+        <p class="seperator">current path</p>
+        <div class="container">
+            <p class="result" *ngFor="let point of path">
+                {{point.label}}
+            </p>
+        </div>
+    </div>
+
+    <div *ngIf="pins.length > 0">
+        <p class="seperator">pinned locations</p>
+        <div class="container">
+            <p class="result" *ngFor="let pin of pins">
+                {{pin}}
+            </p> 
+        </div>
+    </div>
+
+    <div *ngIf="pins.length > 0 || path.length > 0">
+        <p class="seperator">results</p>
+    </div>
+    <div class="container">
+        <p class="result" *ngFor="let result of results" (click)="onResultSelected(result)">
+            {{result.label}}
+        </p> 
+    </div>
+    
+
+</div>

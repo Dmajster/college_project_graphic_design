@@ -1,13 +1,48 @@
 $buttonOffset:15px;
+$buttonRadius:15px;
+$buttonSearchOffset:15px;
 
 $avatarMargin:15px;
 
+$searchbar-min-height:2.8em;
+
 page-main {
+
     main {
         display: grid;
+        grid-template: 
+        "search settings"
+        "content content";
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr;
         min-height: 100%;
     }
  
+    #menu {
+        display: grid;
+        grid-area: settings;
+        z-index: 800;
+        
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin: 15px;
+        margin-left: 0;
+    }
+
+    #go {
+        display: grid;
+        grid-area: content;
+        z-index: 800;
+        
+        justify-self: center;
+        align-self: flex-end;
+        margin-bottom: $buttonOffset;
+    }
+
+    #search {
+        margin: 15px;
+    }
+
     #map {
         position: fixed;
         top: 0;
@@ -16,27 +51,11 @@ page-main {
         min-height: 100%;
     }
 
-    #menu {
-        z-index: 800;
-        display: grid;
-        justify-self: flex-start;
-        align-self: flex-start;
-        margin-left: $buttonOffset;
-        margin-top: $buttonOffset;
-    }
-
-    #go {
-        z-index: 800;
-        display: grid;
-        justify-self: center;
-        align-self: flex-end;
-        margin-bottom: $buttonOffset;
-    }
-
     #billing, #authentication, #routes {
         width: 100%;
         display: grid;
     }
+
     #avatar{
         margin: $avatarMargin;
         display: grid;

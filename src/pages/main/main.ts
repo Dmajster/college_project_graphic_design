@@ -66,6 +66,9 @@ export class MainPage {
     this.loadMap(latitude, longitude);
   }
 
+  getItems(event){
+  }
+
   async loadMap(latitude: Number, longitude: Number){
     this.map = L.map('map', {
       center: [latitude, longitude],
@@ -77,6 +80,8 @@ export class MainPage {
       maxZoom: 19,
       attribution: '',
     }).addTo(this.map);
+
+    L.marker([latitude, longitude]).addTo(this.map);
   }
 
   toggleMenu()

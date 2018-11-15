@@ -10,6 +10,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ResetPage } from '../pages/reset/reset';
 import { MainPage } from '../pages/main/main';
 import { Geolocation } from '@ionic-native/geolocation';
+import { SearchComponent } from '../components/search/search';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MainPage,
     LoginPage,
     RegisterPage,
-    ResetPage
+    ResetPage,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MainPage,
     LoginPage,
     RegisterPage,
-    ResetPage
+    ResetPage,
+    SearchComponent
   ],
   providers: [
     StatusBar,
