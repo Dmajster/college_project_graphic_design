@@ -1,0 +1,73 @@
+page-profile {
+    #main{
+        text-align: center;
+    }
+
+    #napis{
+        text-align: center;
+        color: #1B75BC ;
+    }
+
+    #offers {
+        color: white;
+        //border-bottom-left-radius: 25px;
+        //border-bottom-right-radius: 25px;
+        //background-color: #63A2D3 ;
+        background: linear-gradient(to right bottom, #1B75BC 50%, #1B75BC 50%);
+        height: 30%;
+        width: 113%;
+        padding-bottom: 6%;
+        padding-left: 6%;
+        padding-right: 6%;
+        -webkit-transform: skewY(-7deg);
+        -moz-transform: skewY(-7deg);
+        -ms-transform: skewY(-7deg);
+        -o-transform: skewY(-7deg);
+        transform: skewY(-7deg);
+        margin-left: -20px;
+        margin-right: 20px;
+    }
+
+    #notr {
+        color: white;
+        //border-bottom-left-radius: 25px;
+        //border-bottom-right-radius: 25px;
+        background-color: #1B75BC ;
+        //border: 5px solid rgba(255, 255, 255, .5);
+        
+        height: 30%;
+        width: 100%;
+        padding-bottom: 3%;
+        padding-top: 7%;
+    }
+
+    #text {
+        -webkit-transform: skewY(7deg);
+        -moz-transform: skewY(7deg);
+        -ms-transform: skewY(7deg);
+        -o-transform: skewY(7deg);
+        transform: skewY(7deg);
+    }
+
+    #avatar{
+        margin: $avatarMargin;
+        display: grid;
+        grid-auto-flow: row;
+        padding-top: 15px;
+
+        align-content: center;
+        justify-content: center;
+
+        .image{
+            display: grid;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 100%;
+        }
+        .username{
+            //margin-top: 15px;
+            font-size: 16px;
+            justify-self: center;
+        }
+    }
+}

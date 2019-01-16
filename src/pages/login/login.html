@@ -1,9 +1,7 @@
 <ion-content>
     <main>
-        <input id="email"           [(ngModel)]="email"                 type="email"    placeholder="Username">
+        <input id="email"           [(ngModel)]="email"                                 placeholder="Username">
         <input id="password"        [(ngModel)]="password"              type="password" placeholder="Password">
-        <input id="password_reset"  (click)="navigateResetPassword()"   type="button"   value="reset password">
         <input id="login"           (click)="navigateHome()"            type="button"   value="login">
-        <input id="register"        (click)="navigateRegister()"        type="button"   value="register">
     </main>
 </ion-content>

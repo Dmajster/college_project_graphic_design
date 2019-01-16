@@ -11,6 +11,9 @@ import { ResetPage } from '../pages/reset/reset';
 import { MainPage } from '../pages/main/main';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SearchComponent } from '../components/search/search';
+import { BillingPage } from '../pages/billing/billing';
+import { ProfilePage } from '../pages/profile/profile';
+import { RoutePage } from '../pages/route/route';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { SearchComponent } from '../components/search/search';
     LoginPage,
     RegisterPage,
     ResetPage,
-    SearchComponent
+    SearchComponent,
+    BillingPage,
+    ProfilePage,
+    RoutePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ import { SearchComponent } from '../components/search/search';
     LoginPage,
     RegisterPage,
     ResetPage,
-    SearchComponent
+    SearchComponent,
+    BillingPage,
+    ProfilePage,
+    RoutePage
   ],
   providers: [
     StatusBar,

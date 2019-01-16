@@ -2,10 +2,10 @@
   <main>
       <div id="map" #map></div>
 
-      <app-search id="search"></app-search>
+      <app-search (getPathUpdate)="updateMap($event)" id="search"></app-search>
       
       <button class="slim round shadow" id="menu" (click)="toggleMenu()">⚙️</button>
-      <button class="slim round shadow primary" id="go">Request pickup</button>
+      <button class="slim round shadow primary" id="route" (click)="displayRouteModal()">View Route</button>
   </main>
 </ion-content>
   
@@ -16,10 +16,9 @@
       <img class="image" src="https://dummyimage.com/128x128/ded3de/fff" alt="?">
       <div class="username">Test</div>
     </div>
-    <button ion-button block>Billing</button>
-    <button ion-button block>Authentication</button>
-    <button ion-button block>Routes</button>
-    <button ion-button block>Sign out</button>
+    <button ion-button block (click)="goToBilling()">Billing</button>
+    <button ion-button block (click)="goToProfile()">Profile</button>
+    <button ion-button block (click)="goToLogin()">Sign out</button>
   </ion-content>
 </ion-menu>
 

@@ -7,10 +7,96 @@ page-login {
         justify-items: center;
         justify-content: center;
         min-height: 100%;
+
+        grid-template-columns: 100%;
         
         input {
             display:grid;
             width: 80%;
         }
     }
+
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    main {
+        display: grid;
+        align-content: center;
+    
+        background-image: linear-gradient(-10deg, #301782, #166af1);
+    
+        min-height: 100vh;
+    }
+    
+    #email, #password {
+        margin-top: 40px;
+    
+        display: grid;
+        align-self: center;
+        justify-self: center;
+        grid-auto-flow: column;
+    
+        width: 80%;
+        height: 60px;
+        padding: 0px 30px;
+    
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    
+        border: 2px solid transparent;
+        background-color: rgba(255,255,255, 1);
+        border-radius: 60px;
+    }
+    
+    #login, #register {
+        margin-top: 40px;
+    
+        display: grid;
+        align-self: center;
+        justify-self: center;
+        grid-auto-flow: column;
+    
+        height: 60px;
+        padding: 0px 30px;
+    
+        font-size: 16px;
+    
+        border: 2px solid transparent;
+        background-color: transparent;
+        border-radius: 60px;
+    }
+    
+    #login {
+        border: 2px solid #4280ff;
+        color: #4280ff;
+        width: 40%;
+    }
+    
+    #register {
+        align-self: flex-end;
+        margin-top: 10px;
+        padding: 20px;
+        background-color: transparent;
+        color: #4280ff;
+    }
+    
+    #password_reset
+    {
+        display: grid;
+        justify-self: right;
+        margin-top: 10px;
+        margin-right: calc(10% + 10px);
+        color: #4280ff;
+    }
+    
+    #email:focus, #password:focus  {
+        border: 2px solid #4280ff;
+        color: #4280ff;
+    }
 }
+
+
+

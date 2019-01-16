@@ -1,0 +1,28 @@
+<!--
+  Generated template for the RoutePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="closeModal()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Route</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <main>
+      <p class="distance">distance: {{(distance/1000).toFixed(3)}}km</p>
+      <p class="time">time: {{(time/3600).toFixed(3)}}h</p>
+      
+      
+      <button class="slim round shadow primary" id="route" >Request Pickup</button>
+  </main>
+</ion-content>

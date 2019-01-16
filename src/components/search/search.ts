@@ -1,44 +1,34 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-search',
   templateUrl: 'search.html'
 })
 export class SearchComponent {
-    private active: boolean = false;
     private provider;
     private searchQuery: string = "";
 
-    private wasInside = false;
-  
-    @HostListener('document:click', ['$event'])
-    clickout(event) {
-      if(this.eRef.nativeElement.contains(event.target)) {
-        this.active = true;
-      } else {
-        this.active = false;
-      }
-    }
+    @Output() getPathUpdate = new EventEmitter<any[]>();
 
     path: any[] = []
     pins: any[] = []
     results: any[] = []
 
-    constructor (private eRef: ElementRef) {
-        this.provider = new OpenStreetMapProvider();
+    constructor () {
+        this.provider = new OpenStreetMapProvider();  
     }
 
     onResultSelected(result)
     {
-        console.log(result);
+        console.log("should update");
         this.path.push(result);
         this.searchQuery = "";
+        this.getPathUpdate.emit(this.path);
     }
 
     async onInput() {
-        this.active = true;
         this.results = await this.provider.search({ query: this.searchQuery });
+        //console.log(this.results);
     }
 }

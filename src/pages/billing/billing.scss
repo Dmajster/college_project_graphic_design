@@ -1,0 +1,30 @@
+page-billing {
+    #main {
+        height: 100%;
+        width: 100%;
+    }
+
+    #offers {
+        border-radius: 15%;
+        background-color: #63A2D3 ;
+        height: 30%;
+        width: 100%;
+    }
+
+    .button1 {
+        //display: inline-block;
+        border-radius: 40px;
+        background-color: #1B75BC ;
+        //border: none;
+        //color: #FFFFFF;
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem;
+        width: 25rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        //transition: all 0.5s;
+        //cursor: pointer;
+        //margin: 5px;
+    }
+}

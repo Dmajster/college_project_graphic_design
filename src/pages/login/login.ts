@@ -19,7 +19,7 @@ export class LoginPage {
   }
 
   navigateHome() {
-    if ( this.email != "test@test.si" || this.password != "test" ){
+    if ( this.email != "test" || this.password != "test" ){
       return;
     }
 

@@ -1,0 +1,20 @@
+page-route {
+    main{
+        display: grid;
+        min-width: 100%;
+        min-height: 100%;
+        grid-template-rows: min-content;
+        
+    }
+
+    .distance, .time{
+        margin: 30px 30px 0 30px;
+    }
+
+    #route{
+        display: grid;
+        bottom: 0;
+        align-self: end;
+        margin: 0 30px 30px 30px;
+    }
+}
